@@ -1,0 +1,16 @@
+digraph moore {
+    "'state[0]' = 0; 'state[1]' = 0;" [label="initial\n"]
+    "'state[0]' = 1; 'state[1]' = 0;" [label=""]
+    "'state[0]' = 1; 'state[1]' = 1;" [label="increase"]
+    "'state[0]' = 0; 'state[1]' = 1;" [label="emergency"]
+    "'state[0]' = 0; 'state[1]' = 0;" -> "'state[0]' = 1; 'state[1]' = 0;" [label="*"]
+    "'state[0]' = 1; 'state[1]' = 0;" -> "'state[0]' = 1; 'state[1]' = 1;" [label="up ∧ ¬bound"]
+    "'state[0]' = 1; 'state[1]' = 0;" -> "'state[0]' = 1; 'state[1]' = 0;" [label="¬up ∧ ¬bound"]
+    "'state[0]' = 1; 'state[1]' = 0;" -> "'state[0]' = 0; 'state[1]' = 1;" [label="bound"]
+    "'state[0]' = 0; 'state[1]' = 1;" -> "'state[0]' = 1; 'state[1]' = 1;" [label="up ∧ ¬bound"]
+    "'state[0]' = 0; 'state[1]' = 1;" -> "'state[0]' = 1; 'state[1]' = 0;" [label="¬up ∧ ¬bound"]
+    "'state[0]' = 0; 'state[1]' = 1;" -> "'state[0]' = 0; 'state[1]' = 1;" [label="bound"]
+    "'state[0]' = 1; 'state[1]' = 1;" -> "'state[0]' = 1; 'state[1]' = 1;" [label="up ∧ ¬bound"]
+    "'state[0]' = 1; 'state[1]' = 1;" -> "'state[0]' = 1; 'state[1]' = 0;" [label="¬up ∧ ¬bound"]
+    "'state[0]' = 1; 'state[1]' = 1;" -> "'state[0]' = 0; 'state[1]' = 1;" [label="bound"]
+}
